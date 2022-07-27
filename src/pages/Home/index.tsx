@@ -1,6 +1,8 @@
 import { Play } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
 
+import { NewCycleFormData } from './models/NewCycleFormData'
+
 import {
   HomeContainer,
   FormContainer,
@@ -10,11 +12,6 @@ import {
   TaskInput,
   MinutesAmountInput,
 } from './styles'
-
-interface NewCycleFormData {
-  task: string
-  minutesAmount: number
-}
 
 export function Home() {
   const { register, handleSubmit, watch, reset } = useForm<NewCycleFormData>({
