@@ -1,17 +1,12 @@
-import { useForm } from 'react-hook-form'
-
-import { NewCycleFormData } from '../../pages/Home/models/NewCycleFormData'
+import { useContext } from 'react'
+import { useFormContext } from 'react-hook-form'
+import { CycleContext } from '../../context/CyclesContext'
 
 import { FormContainer, TaskInput, MinutesAmountInput } from './styles'
 
 export function NewCycleForm() {
-  const { register, handleSubmit, watch, reset } = useForm<NewCycleFormData>({
-    defaultValues: {
-      task: '',
-      minutesAmount: 0,
-    },
-  })
-
+  const { activeCycle } = useContext(CycleContext)
+  const { register } = useFormContext()
   return (
     <FormContainer>
       <label htmlFor="task">Vou trabalhar em</label>
